@@ -1,9 +1,11 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted } from 'vue'
+import logoLight from '@/assets/images/kodikami-light.png';
+import logoDark from '@/assets/images/kodikami.png';
 
-const activeSection = ref('home');
-const isMobileMenuOpen = ref(false);
-const darkMode = ref(false);
+const activeSection = ref('home')
+const isMobileMenuOpen = ref(false)
+const darkMode = ref(false)
 
 const sections = [
   { id: 'home', name: 'Home' },
@@ -11,52 +13,52 @@ const sections = [
   { id: 'services', name: 'Services' },
   { id: 'portfolio', name: 'Portfolio' },
   { id: 'pricing', name: 'Pricing' },
-  { id: 'contact', name: 'Contact' }
-];
+  { id: 'contact', name: 'Contact' },
+]
 
 const toggleDarkMode = () => {
-  darkMode.value = !darkMode.value;
+  darkMode.value = !darkMode.value
   if (darkMode.value) {
-    document.documentElement.classList.add('dark');
+    document.documentElement.classList.add('dark')
   } else {
-    document.documentElement.classList.remove('dark');
+    document.documentElement.classList.remove('dark')
   }
   // Save preference to localStorage
-  localStorage.setItem('darkMode', darkMode.value);
-};
+  localStorage.setItem('darkMode', darkMode.value)
+}
 
 const handleScroll = () => {
-  const scrollPosition = window.scrollY + 100;
+  const scrollPosition = window.scrollY + 100
 
   for (const section of sections) {
-    const element = document.getElementById(section.id);
+    const element = document.getElementById(section.id)
     if (element) {
-      const offsetTop = element.offsetTop;
-      const offsetHeight = element.offsetHeight;
+      const offsetTop = element.offsetTop
+      const offsetHeight = element.offsetHeight
 
       if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-        activeSection.value = section.id;
-        break;
+        activeSection.value = section.id
+        break
       }
     }
   }
-};
+}
 
 const closeMobileMenu = () => {
-  isMobileMenuOpen.value = false;
-};
+  isMobileMenuOpen.value = false
+}
 
 onMounted(() => {
   // Check for saved preference
-  const savedMode = localStorage.getItem('darkMode');
+  const savedMode = localStorage.getItem('darkMode')
   if (savedMode === 'true') {
-    darkMode.value = true;
-    document.documentElement.classList.add('dark');
+    darkMode.value = true
+    document.documentElement.classList.add('dark')
   }
 
-  window.addEventListener('scroll', handleScroll);
-  handleScroll(); // Initial check
-});
+  window.addEventListener('scroll', handleScroll)
+  handleScroll() // Initial check
+})
 </script>
 
 <template>
@@ -65,13 +67,16 @@ onMounted(() => {
     <nav class="fixed w-full bg-white dark:bg-gray-800 shadow-md z-10">
       <div class="container mx-auto px-6 py-4">
         <div class="flex justify-between items-center">
-          <div class="text-2xl font-bold text-[#5EC5E3] dark:text-[#5EC5E3]">Logo</div>
+          <div>
+            <img :src="darkMode ? logoLight : logoDark" alt="Logo" class="h-10">
+          </div>
           <div class="flex items-center space-x-6">
             <div class="hidden md:flex space-x-8">
               <a v-for="section in sections" :key="section.id" :href="`#${section.id}`"
                 class="px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300" :class="{
                   'text-white bg-[#5EC5E3] dark:bg-[#5EC5E3]': activeSection === section.id,
-                  'text-gray-700 dark:text-gray-300 hover:text-white hover:bg-[#5EC5E3] dark:hover:bg-[#5EC5E3]': activeSection !== section.id
+                  'text-gray-700 dark:text-gray-300 hover:text-white hover:bg-[#5EC5E3] dark:hover:bg-[#5EC5E3]':
+                    activeSection !== section.id,
                 }" @click="closeMobileMenu">
                 {{ section.name }}
               </a>
@@ -80,8 +85,13 @@ onMounted(() => {
             <!-- Dark Mode Toggle -->
             <button @click="toggleDarkMode"
               class="p-2 rounded-full focus:outline-none cursor-pointer transition-colors duration-300 bg-gray-100 dark:bg-gray-700 text-yellow-500 dark:text-purple-400 hover:bg-gray-200 dark:hover:bg-gray-600"
-              aria-label="Toggle dark mode"
-              style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+              aria-label="Toggle dark mode" style="
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              ">
               <transition enter-active-class="transition-all duration-300 ease-out"
                 leave-active-class="transition-all duration-200 ease-in"
                 enter-from-class="opacity-0 -rotate-45 scale-75" enter-to-class="opacity-100 rotate-0 scale-100"
@@ -120,7 +130,8 @@ onMounted(() => {
               <a v-for="section in sections" :key="section.id" :href="`#${section.id}`"
                 class="block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300" :class="{
                   'text-white bg-[#5EC5E3] dark:bg-[#5EC5E3]': activeSection === section.id,
-                  'text-gray-700 dark:text-gray-300 hover:text-white hover:bg-[#5EC5E3] dark:hover:bg-[#5EC5E3]': activeSection !== section.id
+                  'text-gray-700 dark:text-gray-300 hover:text-white hover:bg-[#5EC5E3] dark:hover:bg-[#5EC5E3]':
+                    activeSection !== section.id,
                 }" @click="closeMobileMenu">
                 {{ section.name }}
               </a>
@@ -139,7 +150,8 @@ onMounted(() => {
               Creative <span class="text-[#5EC5E3]">Solutions</span> for Your Business
             </h1>
             <p class="text-lg text-gray-600 mb-8">
-              We provide innovative digital solutions to help your business grow and succeed in the modern world.
+              We provide innovative digital solutions to help your business grow and succeed in the
+              modern world.
             </p>
             <div class="flex space-x-4">
               <a href="#contact"
@@ -165,7 +177,9 @@ onMounted(() => {
       <section id="about" class="py-20 px-6 bg-gray-100">
         <div class="container mx-auto">
           <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">About <span class="text-[#5EC5E3]">Us</span></h2>
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">
+              About <span class="text-[#5EC5E3]">Us</span>
+            </h2>
             <div class="w-20 h-1 bg-[#C00EF4] mx-auto"></div>
           </div>
           <div class="flex flex-col md:flex-row items-center">
@@ -176,8 +190,8 @@ onMounted(() => {
                 </div>
                 <h3 class="text-xl font-semibold text-gray-800 mb-2">Our Story</h3>
                 <p class="text-gray-600">
-                  Founded in 2020, we started as a small team with big dreams. Today, we've grown into a full-service
-                  digital agency.
+                  Founded in 2020, we started as a small team with big dreams. Today, we've grown
+                  into a full-service digital agency.
                 </p>
               </div>
             </div>
@@ -193,7 +207,8 @@ onMounted(() => {
                   <div>
                     <h3 class="text-xl font-semibold text-gray-800 mb-2">Fast Delivery</h3>
                     <p class="text-gray-600">
-                      We pride ourselves on delivering projects on time without compromising quality.
+                      We pride ourselves on delivering projects on time without compromising
+                      quality.
                     </p>
                   </div>
                 </div>
@@ -206,7 +221,8 @@ onMounted(() => {
                   <div>
                     <h3 class="text-xl font-semibold text-gray-800 mb-2">Secure Solutions</h3>
                     <p class="text-gray-600">
-                      Security is our top priority. All our solutions are built with the latest security standards.
+                      Security is our top priority. All our solutions are built with the latest
+                      security standards.
                     </p>
                   </div>
                 </div>
@@ -233,7 +249,9 @@ onMounted(() => {
       <section id="services" class="py-20 px-6">
         <div class="container mx-auto">
           <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">Our <span class="text-[#C00EF4]">Services</span></h2>
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">
+              Our <span class="text-[#C00EF4]">Services</span>
+            </h2>
             <div class="w-20 h-1 bg-[#5EC5E3] mx-auto"></div>
           </div>
           <div class="grid md:grid-cols-3 gap-8">
@@ -243,7 +261,8 @@ onMounted(() => {
               </div>
               <h3 class="text-xl font-semibold text-gray-800 mb-4">Web Development</h3>
               <p class="text-gray-600 mb-4">
-                Custom websites built with modern technologies to ensure performance and scalability.
+                Custom websites built with modern technologies to ensure performance and
+                scalability.
               </p>
               <a href="#" class="text-[#5EC5E3] font-medium flex items-center">
                 Learn more
@@ -256,7 +275,8 @@ onMounted(() => {
               </div>
               <h3 class="text-xl font-semibold text-gray-800 mb-4">UI/UX Design</h3>
               <p class="text-gray-600 mb-4">
-                Beautiful and intuitive interfaces designed to enhance user experience and engagement.
+                Beautiful and intuitive interfaces designed to enhance user experience and
+                engagement.
               </p>
               <a href="#" class="text-[#C00EF4] font-medium flex items-center">
                 Learn more
@@ -269,7 +289,8 @@ onMounted(() => {
               </div>
               <h3 class="text-xl font-semibold text-gray-800 mb-4">Template Design</h3>
               <p class="text-gray-600 mb-4">
-                Pre-designed templates for various industries, customizable to fit your brand and needs.
+                Pre-designed templates for various industries, customizable to fit your brand and
+                needs.
               </p>
               <a href="#" class="text-[#F0CA0B] font-medium flex items-center">
                 Learn more
@@ -283,7 +304,9 @@ onMounted(() => {
       <section id="portfolio" class="py-20 px-6 bg-gray-100">
         <div class="container mx-auto">
           <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">Our <span class="text-[#F0CA0B]">Portfolio</span></h2>
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">
+              Our <span class="text-[#F0CA0B]">Portfolio</span>
+            </h2>
             <div class="w-20 h-1 bg-[#C00EF4] mx-auto"></div>
           </div>
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -293,7 +316,9 @@ onMounted(() => {
               </div>
               <div class="p-6">
                 <h3 class="text-xl font-semibold text-gray-800 mb-2">E-commerce Website</h3>
-                <p class="text-gray-600 mb-4">A full-featured online store with payment integration.</p>
+                <p class="text-gray-600 mb-4">
+                  A full-featured online store with payment integration.
+                </p>
                 <div class="flex flex-wrap gap-2">
                   <span class="bg-[#5EC5E3]/10 text-[#5EC5E3] px-3 py-1 rounded-full text-xs font-medium">Web</span>
                   <span class="bg-[#C00EF4]/10 text-[#C00EF4] px-3 py-1 rounded-full text-xs font-medium">UI/UX</span>
@@ -306,7 +331,9 @@ onMounted(() => {
               </div>
               <div class="p-6">
                 <h3 class="text-xl font-semibold text-gray-800 mb-2">Mobile App</h3>
-                <p class="text-gray-600 mb-4">A cross-platform mobile application for health tracking.</p>
+                <p class="text-gray-600 mb-4">
+                  A cross-platform mobile application for health tracking.
+                </p>
                 <div class="flex flex-wrap gap-2">
                   <span class="bg-[#F0CA0B]/10 text-[#F0CA0B] px-3 py-1 rounded-full text-xs font-medium">Mobile</span>
                   <span class="bg-[#5EC5E3]/10 text-[#5EC5E3] px-3 py-1 rounded-full text-xs font-medium">React
@@ -345,10 +372,13 @@ onMounted(() => {
       <section id="pricing" class="py-20 px-6 bg-white">
         <div class="container mx-auto">
           <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">Paket <span class="text-[#C00EF4]">Layanan</span></h2>
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">
+              Paket <span class="text-[#C00EF4]">Layanan</span>
+            </h2>
             <div class="w-20 h-1 bg-[#F0CA0B] mx-auto"></div>
             <p class="text-gray-600 max-w-2xl mx-auto mt-6">
-              Pilih paket yang sesuai dengan kebutuhan Anda. Semua paket termasuk hosting dan domain.
+              Pilih paket yang sesuai dengan kebutuhan Anda. Semua paket termasuk hosting dan
+              domain.
             </p>
           </div>
 
@@ -358,8 +388,9 @@ onMounted(() => {
               class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow">
               <div class="p-6 text-center">
                 <h3 class="text-xl font-bold text-gray-800 mb-2">Paket Starter</h3>
-                <div class="text-2xl font-bold text-[#5EC5E3] mb-4">Rp 250rb <span class="text-sm text-gray-500">-
-                    1jt</span></div>
+                <div class="text-2xl font-bold text-[#5EC5E3] mb-4">
+                  Rp 250rb <span class="text-sm text-gray-500">- 1jt</span>
+                </div>
                 <p class="text-sm text-gray-600 mb-4 bg-[#5EC5E3]/10 p-3 rounded-lg">
                   Cocok untuk personal brand, portofolio, blog, atau landing page.
                 </p>
@@ -404,8 +435,9 @@ onMounted(() => {
               </div>
               <div class="p-6 text-center">
                 <h3 class="text-xl font-bold text-gray-800 mb-2">Paket Growth</h3>
-                <div class="text-2xl font-bold text-[#C00EF4] mb-4">Rp 1.5jt <span class="text-sm text-gray-500">-
-                    4jt</span></div>
+                <div class="text-2xl font-bold text-[#C00EF4] mb-4">
+                  Rp 1.5jt <span class="text-sm text-gray-500">- 4jt</span>
+                </div>
                 <p class="text-sm text-gray-600 mb-4 bg-[#C00EF4]/10 p-3 rounded-lg">
                   Cocok untuk UMKM, usaha kuliner, jasa lokal, atau profil bisnis.
                 </p>
@@ -447,8 +479,9 @@ onMounted(() => {
               class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow">
               <div class="p-6 text-center">
                 <h3 class="text-xl font-bold text-gray-800 mb-2">Paket Pro App</h3>
-                <div class="text-2xl font-bold text-[#F0CA0B] mb-4">Rp 5jt <span class="text-sm text-gray-500">-
-                    10jt</span></div>
+                <div class="text-2xl font-bold text-[#F0CA0B] mb-4">
+                  Rp 5jt <span class="text-sm text-gray-500">- 10jt</span>
+                </div>
                 <p class="text-sm text-gray-600 mb-4 bg-[#F0CA0B]/10 p-3 rounded-lg">
                   Cocok untuk kebutuhan bisnis lebih kompleks: dashboard, login, admin panel.
                 </p>
@@ -545,7 +578,9 @@ onMounted(() => {
       <section id="contact" class="py-20 px-6">
         <div class="container mx-auto">
           <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">Get In <span class="text-[#5EC5E3]">Touch</span></h2>
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">
+              Get In <span class="text-[#5EC5E3]">Touch</span>
+            </h2>
             <div class="w-20 h-1 bg-[#F0CA0B] mx-auto"></div>
           </div>
           <div class="flex flex-col md:flex-row">
@@ -589,7 +624,9 @@ onMounted(() => {
                   </div>
                   <div>
                     <h4 class="text-lg font-medium text-gray-700">Address</h4>
-                    <p class="text-gray-600">123 Business Ave, Suite 456<br>San Francisco, CA 94107</p>
+                    <p class="text-gray-600">
+                      123 Business Ave, Suite 456<br />San Francisco, CA 94107
+                    </p>
                   </div>
                 </div>
               </div>
@@ -629,19 +666,19 @@ onMounted(() => {
                   <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
                   <input type="text" id="name"
                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5EC5E3] focus:border-transparent"
-                    placeholder="John Doe">
+                    placeholder="John Doe" />
                 </div>
                 <div class="mb-6">
                   <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
                   <input type="email" id="email"
                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5EC5E3] focus:border-transparent"
-                    placeholder="john@example.com">
+                    placeholder="john@example.com" />
                 </div>
                 <div class="mb-6">
                   <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
                   <input type="text" id="subject"
                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#5EC5E3] focus:border-transparent"
-                    placeholder="How can we help?">
+                    placeholder="How can we help?" />
                 </div>
                 <div class="mb-6">
                   <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
@@ -658,8 +695,6 @@ onMounted(() => {
           </div>
         </div>
       </section>
-
-
     </main>
 
     <!-- Footer -->
@@ -669,28 +704,49 @@ onMounted(() => {
           <div class="mb-8 md:mb-0">
             <h3 class="text-2xl font-bold text-[#5EC5E3] mb-4">Logo</h3>
             <p class="text-gray-400 max-w-md">
-              We create digital experiences that help businesses grow and succeed in the modern world.
+              We create digital experiences that help businesses grow and succeed in the modern
+              world.
             </p>
           </div>
           <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
             <div>
               <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
               <ul class="space-y-2">
-                <li><a href="#home" class="text-gray-400 hover:text-[#5EC5E3] transition-colors">Home</a></li>
-                <li><a href="#about" class="text-gray-400 hover:text-[#5EC5E3] transition-colors">About</a></li>
-                <li><a href="#services" class="text-gray-400 hover:text-[#5EC5E3] transition-colors">Services</a></li>
-                <li><a href="#portfolio" class="text-gray-400 hover:text-[#5EC5E3] transition-colors">Portfolio</a></li>
-                <li><a href="#contact" class="text-gray-400 hover:text-[#5EC5E3] transition-colors">Contact</a></li>
+                <li>
+                  <a href="#home" class="text-gray-400 hover:text-[#5EC5E3] transition-colors">Home</a>
+                </li>
+                <li>
+                  <a href="#about" class="text-gray-400 hover:text-[#5EC5E3] transition-colors">About</a>
+                </li>
+                <li>
+                  <a href="#services" class="text-gray-400 hover:text-[#5EC5E3] transition-colors">Services</a>
+                </li>
+                <li>
+                  <a href="#portfolio" class="text-gray-400 hover:text-[#5EC5E3] transition-colors">Portfolio</a>
+                </li>
+                <li>
+                  <a href="#contact" class="text-gray-400 hover:text-[#5EC5E3] transition-colors">Contact</a>
+                </li>
               </ul>
             </div>
             <div>
               <h4 class="text-lg font-semibold mb-4">Services</h4>
               <ul class="space-y-2">
-                <li><a href="#" class="text-gray-400 hover:text-[#5EC5E3] transition-colors">Web Development</a></li>
-                <li><a href="#" class="text-gray-400 hover:text-[#5EC5E3] transition-colors">UI/UX Design</a></li>
-                <li><a href="#" class="text-gray-400 hover:text-[#5EC5E3] transition-colors">Digital Marketing</a></li>
-                <li><a href="#" class="text-gray-400 hover:text-[#5EC5E3] transition-colors">SEO</a></li>
-                <li><a href="#" class="text-gray-400 hover:text-[#5EC5E3] transition-colors">App Development</a></li>
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-[#5EC5E3] transition-colors">Web Development</a>
+                </li>
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-[#5EC5E3] transition-colors">UI/UX Design</a>
+                </li>
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-[#5EC5E3] transition-colors">Digital Marketing</a>
+                </li>
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-[#5EC5E3] transition-colors">SEO</a>
+                </li>
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-[#5EC5E3] transition-colors">App Development</a>
+                </li>
               </ul>
             </div>
             <div>
