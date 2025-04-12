@@ -8,6 +8,7 @@ const sections = [
   { id: 'about', name: 'About' },
   { id: 'services', name: 'Services' },
   { id: 'portfolio', name: 'Portfolio' },
+  { id: 'pricing', name: 'Pricing' },
   { id: 'contact', name: 'Contact' }
 ];
 
@@ -413,6 +414,207 @@ onMounted(() => {
                   Send Message
                 </button>
               </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" class="py-20 px-6 bg-white">
+        <div class="container mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Paket <span class="text-[#C00EF4]">Layanan</span></h2>
+            <div class="w-20 h-1 bg-[#F0CA0B] mx-auto"></div>
+            <p class="text-gray-600 max-w-2xl mx-auto mt-6">
+              Pilih paket yang sesuai dengan kebutuhan Anda. Semua paket termasuk hosting dan domain.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <!-- Paket Starter -->
+            <div
+              class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow">
+              <div class="p-6 text-center">
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Paket Starter</h3>
+                <div class="text-2xl font-bold text-[#5EC5E3] mb-4">Rp 250rb <span class="text-sm text-gray-500">-
+                    1jt</span></div>
+                <p class="text-sm text-gray-600 mb-4 bg-[#5EC5E3]/10 p-3 rounded-lg">
+                  Cocok untuk personal brand, portofolio, blog, atau landing page.
+                </p>
+                <a href="#contact"
+                  class="block w-full bg-[#5EC5E3] hover:bg-[#4ab4d2] text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm">
+                  Pesan Sekarang
+                </a>
+              </div>
+              <div class="border-t border-gray-200 p-6">
+                <h4 class="font-semibold text-gray-700 mb-3 text-center">Termasuk:</h4>
+                <ul class="space-y-3 text-sm">
+                  <li class="flex items-start">
+                    <svg class="w-4 h-4 text-[#5EC5E3] mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor"
+                      viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span class="text-gray-600">Landing page / blog dinamis</span>
+                  </li>
+                  <li class="flex items-start">
+                    <svg class="w-4 h-4 text-[#5EC5E3] mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor"
+                      viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span class="text-gray-600">Desain responsif & modern</span>
+                  </li>
+                  <li class="flex items-start">
+                    <svg class="w-4 h-4 text-[#5EC5E3] mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor"
+                      viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span class="text-gray-600">1 tahun hosting + domain (web.id / my.id)</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Paket Growth -->
+            <div
+              class="relative bg-white border-2 border-[#C00EF4] rounded-xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition-transform">
+              <div class="absolute top-0 right-0 bg-[#C00EF4] text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+                POPULER
+              </div>
+              <div class="p-6 text-center">
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Paket Growth</h3>
+                <div class="text-2xl font-bold text-[#C00EF4] mb-4">Rp 1.5jt <span class="text-sm text-gray-500">-
+                    4jt</span></div>
+                <p class="text-sm text-gray-600 mb-4 bg-[#C00EF4]/10 p-3 rounded-lg">
+                  Cocok untuk UMKM, usaha kuliner, jasa lokal, atau profil bisnis.
+                </p>
+                <a href="#contact"
+                  class="block w-full bg-[#C00EF4] hover:bg-[#a90bd3] text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm">
+                  Pesan Sekarang
+                </a>
+              </div>
+              <div class="border-t border-gray-200 p-6">
+                <h4 class="font-semibold text-gray-700 mb-3 text-center">Termasuk:</h4>
+                <ul class="space-y-3 text-sm">
+                  <li class="flex items-start">
+                    <svg class="w-4 h-4 text-[#C00EF4] mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor"
+                      viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span class="text-gray-600">Website dinamis dengan fitur basic CRUD</span>
+                  </li>
+                  <li class="flex items-start">
+                    <svg class="w-4 h-4 text-[#C00EF4] mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor"
+                      viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span class="text-gray-600">Desain responsif & modern</span>
+                  </li>
+                  <li class="flex items-start">
+                    <svg class="w-4 h-4 text-[#C00EF4] mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor"
+                      viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span class="text-gray-600">1 tahun hosting + custom domain (.com / .id / lainnya)</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Paket Pro App -->
+            <div
+              class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow">
+              <div class="p-6 text-center">
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Paket Pro App</h3>
+                <div class="text-2xl font-bold text-[#F0CA0B] mb-4">Rp 5jt <span class="text-sm text-gray-500">-
+                    10jt</span></div>
+                <p class="text-sm text-gray-600 mb-4 bg-[#F0CA0B]/10 p-3 rounded-lg">
+                  Cocok untuk kebutuhan bisnis lebih kompleks: dashboard, login, admin panel.
+                </p>
+                <a href="#contact"
+                  class="block w-full bg-[#F0CA0B] hover:bg-[#d8b70a] text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm">
+                  Pesan Sekarang
+                </a>
+              </div>
+              <div class="border-t border-gray-200 p-6">
+                <h4 class="font-semibold text-gray-700 mb-3 text-center">Termasuk:</h4>
+                <ul class="space-y-3 text-sm">
+                  <li class="flex items-start">
+                    <svg class="w-4 h-4 text-[#F0CA0B] mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor"
+                      viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span class="text-gray-600">Web App dengan fitur khusus</span>
+                  </li>
+                  <li class="flex items-start">
+                    <svg class="w-4 h-4 text-[#F0CA0B] mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor"
+                      viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span class="text-gray-600">Contoh: sistem booking, katalog produk</span>
+                  </li>
+                  <li class="flex items-start">
+                    <svg class="w-4 h-4 text-[#F0CA0B] mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor"
+                      viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span class="text-gray-600">Manajemen user</span>
+                  </li>
+                  <li class="flex items-start">
+                    <svg class="w-4 h-4 text-[#F0CA0B] mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor"
+                      viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span class="text-gray-600">Desain responsif & modern</span>
+                  </li>
+                  <li class="flex items-start">
+                    <svg class="w-4 h-4 text-[#F0CA0B] mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor"
+                      viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span class="text-gray-600">1 tahun hosting + custom domain</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Custom Solution -->
+            <div class="bg-gradient-to-br from-[#5EC5E3] to-[#C00EF4] rounded-xl shadow-lg overflow-hidden">
+              <div class="p-6 text-center text-white">
+                <h3 class="text-xl font-bold mb-2">Custom Solution</h3>
+                <div class="text-2xl font-bold mb-4">Custom Price</div>
+                <p class="text-sm mb-4 bg-white/20 p-3 rounded-lg">
+                  Punya ide atau kebutuhan spesifik? Kami bantu realisasikan.
+                </p>
+                <a href="#contact"
+                  class="block w-full bg-white hover:bg-gray-100 text-[#5EC5E3] font-medium py-2 px-4 rounded-lg transition-colors text-sm">
+                  Konsultasi Gratis
+                </a>
+              </div>
+              <div class="border-t border-white/20 p-6">
+                <h4 class="font-semibold text-white mb-3 text-center">Hubungi Kami:</h4>
+                <ul class="space-y-3 text-sm text-white/90">
+                  <li class="flex items-center">
+                    <svg class="w-4 h-4 text-white mr-2 flex-shrink-0" fill="none" stroke="currentColor"
+                      viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                      </path>
+                    </svg>
+                    <span>contact@example.com</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg class="w-4 h-4 text-white mr-2 flex-shrink-0" fill="none" stroke="currentColor"
+                      viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                      </path>
+                    </svg>
+                    <span>+62 8xx xxxx xxxx</span>
+                  </li>
+                </ul>
+                <p class="text-xs text-white/70 mt-4 text-center">
+                  Silakan hubungi tim kami untuk konsultasi & penawaran khusus.
+                </p>
+              </div>
             </div>
           </div>
         </div>
