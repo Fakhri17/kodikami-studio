@@ -9,8 +9,8 @@ const router = createRouter({
       name: 'home',
       component: HomeView,
       meta: {
-        title: 'Comming Soon',
-        description: 'This is the home page',
+        title: 'KodiKami Studio',
+        description: 'KodiKami Studio - Home',
       },
     },
   ],

@@ -2,6 +2,8 @@
 import { ref, onMounted } from 'vue';
 
 const activeSection = ref('home');
+const isMobileMenuOpen = ref(false);
+const darkMode = ref(false);
 
 const sections = [
   { id: 'home', name: 'Home' },
@@ -11,6 +13,17 @@ const sections = [
   { id: 'pricing', name: 'Pricing' },
   { id: 'contact', name: 'Contact' }
 ];
+
+const toggleDarkMode = () => {
+  darkMode.value = !darkMode.value;
+  if (darkMode.value) {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
+  // Save preference to localStorage
+  localStorage.setItem('darkMode', darkMode.value);
+};
 
 const handleScroll = () => {
   const scrollPosition = window.scrollY + 100;
@@ -29,40 +42,97 @@ const handleScroll = () => {
   }
 };
 
+const closeMobileMenu = () => {
+  isMobileMenuOpen.value = false;
+};
+
 onMounted(() => {
+  // Check for saved preference
+  const savedMode = localStorage.getItem('darkMode');
+  if (savedMode === 'true') {
+    darkMode.value = true;
+    document.documentElement.classList.add('dark');
+  }
+
   window.addEventListener('scroll', handleScroll);
   handleScroll(); // Initial check
 });
 </script>
 
 <template>
-  <div class="min-h-screen font-sans bg-gray-50">
+  <div class="min-h-screen">
     <!-- Navbar -->
-    <nav class="fixed w-full bg-white shadow-md z-10">
+    <nav class="fixed w-full bg-white dark:bg-gray-800 shadow-md z-10">
       <div class="container mx-auto px-6 py-4">
         <div class="flex justify-between items-center">
-          <div class="text-2xl font-bold text-[#5EC5E3]">Logo</div>
-          <div class="hidden md:flex space-x-8">
-            <a v-for="section in sections" :key="section.id" :href="`#${section.id}`"
-              class="px-3 py-2 rounded-md text-sm font-medium transition-colors" :class="{
-                'text-white bg-[#5EC5E3]': activeSection === section.id,
-                'text-gray-700 hover:text-[#5EC5E3]': activeSection !== section.id
-              }">
-              {{ section.name }}
-            </a>
+          <div class="text-2xl font-bold text-[#5EC5E3] dark:text-[#5EC5E3]">Logo</div>
+          <div class="flex items-center space-x-6">
+            <div class="hidden md:flex space-x-8">
+              <a v-for="section in sections" :key="section.id" :href="`#${section.id}`"
+                class="px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300" :class="{
+                  'text-white bg-[#5EC5E3] dark:bg-[#5EC5E3]': activeSection === section.id,
+                  'text-gray-700 dark:text-gray-300 hover:text-white hover:bg-[#5EC5E3] dark:hover:bg-[#5EC5E3]': activeSection !== section.id
+                }" @click="closeMobileMenu">
+                {{ section.name }}
+              </a>
+            </div>
+
+            <!-- Dark Mode Toggle -->
+            <button @click="toggleDarkMode"
+              class="p-2 rounded-full focus:outline-none cursor-pointer transition-colors duration-300 bg-gray-100 dark:bg-gray-700 text-yellow-500 dark:text-purple-400 hover:bg-gray-200 dark:hover:bg-gray-600"
+              aria-label="Toggle dark mode"
+              style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+              <transition enter-active-class="transition-all duration-300 ease-out"
+                leave-active-class="transition-all duration-200 ease-in"
+                enter-from-class="opacity-0 -rotate-45 scale-75" enter-to-class="opacity-100 rotate-0 scale-100"
+                leave-from-class="opacity-100 rotate-0 scale-100" leave-to-class="opacity-0 rotate-45 scale-75"
+                mode="out-in">
+                <!-- Sun Icon (Light Mode) -->
+                <iconify-icon v-if="!darkMode"
+                  class="w-5 h-5 transform transition-transform duration-300 hover:rotate-12"
+                  icon="heroicons-solid:moon" width="20" height="20"></iconify-icon>
+                <!-- Moon Icon (Dark Mode) -->
+                <iconify-icon v-else key="moon"
+                  class="w-5 h-5 transform transition-transform duration-300 hover:-rotate-12"
+                  icon="heroicons-outline:sun" width="20" height="20"></iconify-icon>
+              </transition>
+            </button>
+
+            <!-- Mobile Menu Button -->
+            <button @click="isMobileMenuOpen = !isMobileMenuOpen"
+              class="md:hidden text-gray-700 dark:text-gray-300 focus:outline-none" aria-label="Toggle menu">
+              <svg class="w-6 h-6 transition-transform duration-300" :class="{ 'rotate-90': isMobileMenuOpen }"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  :d="isMobileMenuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'" />
+              </svg>
+            </button>
           </div>
-          <button class="md:hidden text-gray-700">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
         </div>
+
+        <!-- Mobile Menu -->
+        <transition enter-active-class="transition-all duration-300 ease-out"
+          leave-active-class="transition-all duration-200 ease-in" enter-from-class="opacity-0 max-h-0"
+          enter-to-class="opacity-100 max-h-96" leave-from-class="opacity-100 max-h-96"
+          leave-to-class="opacity-0 max-h-0">
+          <div v-if="isMobileMenuOpen" class="md:hidden overflow-hidden" @click="closeMobileMenu">
+            <div class="pt-2 pb-4 space-y-1">
+              <a v-for="section in sections" :key="section.id" :href="`#${section.id}`"
+                class="block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300" :class="{
+                  'text-white bg-[#5EC5E3] dark:bg-[#5EC5E3]': activeSection === section.id,
+                  'text-gray-700 dark:text-gray-300 hover:text-white hover:bg-[#5EC5E3] dark:hover:bg-[#5EC5E3]': activeSection !== section.id
+                }" @click="closeMobileMenu">
+                {{ section.name }}
+              </a>
+            </div>
+          </div>
+        </transition>
       </div>
     </nav>
 
     <!-- Sections -->
     <main>
-      <section id="home" class="pt-32 pb-20 px-6">
+      <section id="home" class="h-screen flex items-center px-6">
         <div class="container mx-auto flex flex-col md:flex-row items-center">
           <div class="md:w-1/2 mb-10 md:mb-0">
             <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
@@ -116,10 +186,8 @@ onMounted(() => {
                 <div class="flex items-start">
                   <div class="bg-[#F0CA0B]/20 p-3 rounded-full mr-4">
                     <div class="bg-[#F0CA0B] w-8 h-8 rounded-full flex items-center justify-center">
-                      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                      </svg>
+                      <iconify-icon class="text-white" icon="iconamoon:lightning-1-light" width="24"
+                        height="24"></iconify-icon>
                     </div>
                   </div>
                   <div>
@@ -132,11 +200,7 @@ onMounted(() => {
                 <div class="flex items-start">
                   <div class="bg-[#C00EF4]/20 p-3 rounded-full mr-4">
                     <div class="bg-[#C00EF4] w-8 h-8 rounded-full flex items-center justify-center">
-                      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
-                        </path>
-                      </svg>
+                      <iconify-icon class="text-white" icon="mdi:shield-check" width="24" height="24"></iconify-icon>
                     </div>
                   </div>
                   <div>
@@ -149,11 +213,8 @@ onMounted(() => {
                 <div class="flex items-start">
                   <div class="bg-[#5EC5E3]/20 p-3 rounded-full mr-4">
                     <div class="bg-[#5EC5E3] w-8 h-8 rounded-full flex items-center justify-center">
-                      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z">
-                        </path>
-                      </svg>
+                      <iconify-icon class="text-white" icon="material-symbols:cloud-outline" width="24"
+                        height="24"></iconify-icon>
                     </div>
                   </div>
                   <div>
@@ -178,10 +239,7 @@ onMounted(() => {
           <div class="grid md:grid-cols-3 gap-8">
             <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow">
               <div class="bg-[#5EC5E3]/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
-                <svg class="w-8 h-8 text-[#5EC5E3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-                </svg>
+                <iconify-icon class="text-[#5EC5E3]" icon="tabler:code" width="32" height="32"></iconify-icon>
               </div>
               <h3 class="text-xl font-semibold text-gray-800 mb-4">Web Development</h3>
               <p class="text-gray-600 mb-4">
@@ -189,19 +247,12 @@ onMounted(() => {
               </p>
               <a href="#" class="text-[#5EC5E3] font-medium flex items-center">
                 Learn more
-                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
-                  </path>
-                </svg>
+                <iconify-icon class="ml-2" icon="mingcute:arrow-right-fill" width="24" height="24"></iconify-icon>
               </a>
             </div>
             <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow">
               <div class="bg-[#C00EF4]/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
-                <svg class="w-8 h-8 text-[#C00EF4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01">
-                  </path>
-                </svg>
+                <iconify-icon class="text-[#C00EF4]" icon="tabler:layout" width="32" height="32"></iconify-icon>
               </div>
               <h3 class="text-xl font-semibold text-gray-800 mb-4">UI/UX Design</h3>
               <p class="text-gray-600 mb-4">
@@ -209,30 +260,20 @@ onMounted(() => {
               </p>
               <a href="#" class="text-[#C00EF4] font-medium flex items-center">
                 Learn more
-                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
-                  </path>
-                </svg>
+                <iconify-icon class="ml-2" icon="mingcute:arrow-right-fill" width="24" height="24"></iconify-icon>
               </a>
             </div>
             <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow">
               <div class="bg-[#F0CA0B]/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
-                <svg class="w-8 h-8 text-[#F0CA0B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                  </path>
-                </svg>
+                <iconify-icon class="text-[#F0CA0B]" icon="tdesign:template" width="32" height="32"></iconify-icon>
               </div>
-              <h3 class="text-xl font-semibold text-gray-800 mb-4">Digital Marketing</h3>
+              <h3 class="text-xl font-semibold text-gray-800 mb-4">Template Design</h3>
               <p class="text-gray-600 mb-4">
-                Comprehensive digital marketing strategies to increase your online presence and conversions.
+                Pre-designed templates for various industries, customizable to fit your brand and needs.
               </p>
               <a href="#" class="text-[#F0CA0B] font-medium flex items-center">
                 Learn more
-                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
-                  </path>
-                </svg>
+                <iconify-icon class="ml-2" icon="mingcute:arrow-right-fill" width="24" height="24"></iconify-icon>
               </a>
             </div>
           </div>
