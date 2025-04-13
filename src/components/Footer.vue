@@ -1,7 +1,7 @@
 <template>
   <footer class="bg-gray-800 text-white py-12 px-6 dark:bg-gray-900 dark:text-gray-200">
     <div class="container mx-auto">
-      <div class="flex flex-col md:flex-row justify-between">
+      <div class="flex flex-col lg:flex-row justify-between flex-wrap">
         <div class="mb-8 md:mb-0">
           <div>
             <img src="@/assets/images/kodikami-light.png" alt="Logo" class="h-10 mb-5">
@@ -11,7 +11,7 @@
             applications. Our mission is to help businesses succeed online by providing top-notch development services
             and innovative solutions.
           </p>
-          <div>
+          <div class="mb-5">
             <h5 class="text-gray-400">Follow Us</h5>
             <div class="flex space-x-4 mt-2">
               <a href="#" class="text-gray-400 hover:text-[#5EC5E3] transition-colors">
@@ -30,7 +30,7 @@
             </div>
           </div>
         </div>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div>
             <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
             <ul class="space-y-2">

@@ -357,8 +357,11 @@ import Navbar from '@/components/Navbar.vue';
       </section>
 
       <section id="portfolio" class="relative overflow-hidden py-40 px-6 bg-primary-50 dark:bg-gray-900">
-        <div class="absolute rounded-full top-32 left-0 w-1/3 h-1/3 bg-primary-500 blur-xl opacity-10"></div>
-        <div class="absolute rounded-full bottom-32 right-0 w-1/3 h-1/3 bg-primary-500 blur-xl opacity-10"></div>
+        <div class="absolute rounded-full top-32 left-0 w-40 h-40 lg:w-1/3 lg:h-1/3 bg-primary-500 blur-xl opacity-10">
+        </div>
+        <div
+          class="absolute rounded-full bottom-32 right-0 w-40 h-40 lg:w-1/3 lg:h-1/3 bg-primary-500 blur-xl opacity-10">
+        </div>
         <div class="container mx-auto relative z-10">
           <div class="text-center mb-24">
             <h2
@@ -371,7 +374,7 @@ import Navbar from '@/components/Navbar.vue';
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             <!-- Project 1 -->
             <div
-              class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow dark:bg-gray-900">
+              class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow dark:bg-gray-800">
               <div
                 class="bg-gray-200 h-72 flex items-center justify-center border-b-2 border-gray-300 dark:border-primary-300">
                 <img src="@/assets/images/project-1.png" alt="Project 1" class="w-full h-full object-cover" />
@@ -397,7 +400,7 @@ import Navbar from '@/components/Navbar.vue';
             </div>
             <!-- Project 2 -->
             <div
-              class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow dark:bg-gray-900">
+              class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow dark:bg-gray-800">
               <div
                 class="bg-gray-200 h-72 flex items-center justify-center border-b-2 border-gray-300 dark:border-primary-300">
                 <img src="@/assets/images/project-2.png" alt="Project 1" class="w-full h-full object-cover" />
@@ -422,7 +425,7 @@ import Navbar from '@/components/Navbar.vue';
             </div>
             <!-- Project 3 -->
             <div
-              class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow dark:bg-gray-900">
+              class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow dark:bg-gray-800">
               <div
                 class="bg-gray-200 h-72 flex items-center justify-center border-b-2 border-gray-300 dark:border-primary-300">
                 <img src="@/assets/images/project-3.png" alt="Project 1" class="w-full h-full object-cover" />
@@ -447,7 +450,7 @@ import Navbar from '@/components/Navbar.vue';
             </div>
             <!-- Project 4 -->
             <div
-              class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow dark:bg-gray-900">
+              class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow dark:bg-gray-800">
               <div
                 class="bg-gray-200 h-72 flex items-center justify-center border-b-2 border-gray-300 dark:border-primary-300">
                 <img src="@/assets/images/project-4.png" alt="Project 1" class="w-full h-full object-cover" />
@@ -473,7 +476,7 @@ import Navbar from '@/components/Navbar.vue';
             </div>
             <!-- Project 5 -->
             <div
-              class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow dark:bg-gray-900">
+              class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow dark:bg-gray-800">
               <div
                 class="bg-gray-200 h-72 flex items-center justify-center border-b-2 border-gray-300 dark:border-primary-300">
                 <img src="@/assets/images/project-5.png" alt="Project 1" class="w-full h-full object-cover" />
@@ -498,7 +501,7 @@ import Navbar from '@/components/Navbar.vue';
             </div>
             <!-- Project 6 -->
             <div
-              class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow dark:bg-gray-900">
+              class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow dark:bg-gray-800">
               <div
                 class="bg-gray-200 h-72 flex items-center justify-center border-b-2 border-gray-300 dark:border-primary-300">
                 <img src="@/assets/images/project-6.png" alt="Project 1" class="w-full h-full object-cover" />
