@@ -1,7 +1,7 @@
 <script setup>
-import { ref, onMounted } from 'vue'
 import logoLight from '@/assets/images/kodikami-light.png';
 import logoDark from '@/assets/images/kodikami.png';
+import { onMounted, ref } from 'vue';
 
 const activeSection = ref('home')
 const isMobileMenuOpen = ref(false)
@@ -11,9 +11,9 @@ const sections = [
   { id: 'home', name: 'Home' },
   { id: 'about', name: 'About' },
   { id: 'services', name: 'Services' },
-  { id: 'portfolio', name: 'Portfolio' },
   { id: 'pricing', name: 'Pricing' },
-  { id: 'contact', name: 'Contact' },
+  { id: 'portfolio', name: 'Portfolio' },
+  // { id: 'contact', name: 'Contact' },
 ]
 
 const toggleDarkMode = () => {
