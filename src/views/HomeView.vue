@@ -34,11 +34,15 @@ import Footer from '@/components/Footer.vue';
               </div>
             </div>
           </div>
-          <div class="md:w-1/2 flex justify-center">
-            <img src="@/assets/images/hero-image.png" alt="Hero Image" class="w-full h-auto rounded-lg">
+          <div class="md:w-1/2 flex justify-center relative">
+            <div
+              class="absolute rounded-full top-0 left-0 w-full h-full bg-[linear-gradient(45deg,transparent_48%,rgba(94,197,227,0.1)_49%,rgba(94,197,227,0.1)_51%,transparent_52%)] dark:bg-[linear-gradient(45deg,transparent_48%,rgba(94,197,227,0.05)_49%,rgba(94,197,227,0.05)_51%,transparent_52%)] bg-[length:6rem_6rem]">
+            </div>
+            <img src="@/assets/images/hero-image.png" alt="Hero Image" class="w-full h-auto rounded-lg relative z-10">
           </div>
         </div>
       </section>
+
 
       <section id="about" class="py-40 px-6 bg-primary-50 dark:bg-gray-800">
         <div class="container mx-auto">
@@ -58,7 +62,7 @@ import Footer from '@/components/Footer.vue';
             <div class="md:w-1/2">
               <div class="mb-10">
                 <h2
-                  class="text-3xl md:text-5xl font-extrabold block mb-3 bg-gradient-to-r from-primary-400 to-secondary-400 text-transparent bg-clip-text py-2">
+                  class="text-3xl md:text-5xl font-extrabold block mb-3 bg-gradient-to-r from-primary-400 to-secondary-400 text-transparent bg-clip-text py-2 w-fit">
                   About Us
                 </h2>
                 <p class="text-lg text-gray-600 mb-4 dark:text-gray-300">
@@ -120,7 +124,7 @@ import Footer from '@/components/Footer.vue';
         <div class="container mx-auto">
           <div class="text-center mb-16">
             <h2
-              class="text-3xl md:text-5xl font-extrabold block mb-3 bg-gradient-to-r from-primary-400 to-secondary-400 text-transparent bg-clip-text py-2">
+              class="text-3xl md:text-5xl font-extrabold block mb-3 bg-gradient-to-r from-primary-400 to-secondary-400 text-transparent bg-clip-text py-2 w-fit mx-auto">
               Our Services
             </h2>
             <p class="text-lg text-gray-600 mb-4 dark:text-gray-300">
@@ -130,9 +134,9 @@ import Footer from '@/components/Footer.vue';
           <div class="grid md:grid-cols-3 gap-8">
             <!-- Card 1 - Web Development -->
             <div
-              class="bg-white p-8 pt-24 rounded-xl shadow-lg hover:shadow-xl transition-shadow dark:bg-gray-800 relative overflow-hidden">
+              class="bg-white p-8 pt-24 rounded-xl shadow-lg hover:shadow-xl transition-shadow relative overflow-hidden dark:bg-gray-800 dark:shadow-primary-600">
               <div
-                class="bg-[#5EC5E3]/10 p-5 rounded-full w-28 h-28 flex items-center justify-center absolute -top-4 -right-4">
+                class="bg-primary/20 p-5 rounded-full w-28 h-28 flex items-center justify-center absolute -top-4 -right-4">
                 <iconify-icon class="text-[#5EC5E3]" icon="tabler:code" width="46" height="46"></iconify-icon>
               </div>
               <h3 class="text-xl font-semibold text-gray-800 mb-4 dark:text-white">Web Development</h3>
@@ -143,10 +147,10 @@ import Footer from '@/components/Footer.vue';
 
             <!-- Card 2 - UI/UX Design -->
             <div
-              class="bg-white p-8 pt-24 rounded-xl shadow-lg hover:shadow-xl transition-shadow dark:bg-gray-800 relative overflow-hidden">
+              class="bg-white p-8 pt-24 rounded-xl shadow-lg hover:shadow-xl transition-shadow relative overflow-hidden dark:bg-gray-800 dark:shadow-secondary-600">
               <div
-                class="bg-[#C00EF4]/10 p-5 rounded-full w-28 h-28 flex items-center justify-center absolute -top-4 -right-4">
-                <iconify-icon class="text-[#C00EF4]" icon="tabler:layout" width="46" height="46"></iconify-icon>
+                class="bg-secondary/20 p-5 rounded-full w-28 h-28 flex items-center justify-center absolute -top-4 -right-4">
+                <iconify-icon class="text-secondary" icon="tabler:layout" width="46" height="46"></iconify-icon>
               </div>
               <h3 class="text-xl font-semibold text-gray-800 mb-4 dark:text-white">UI/UX Design</h3>
               <p class="text-gray-600 mb-4 dark:text-gray-300">
@@ -156,9 +160,9 @@ import Footer from '@/components/Footer.vue';
 
             <!-- Card 3 - Template Design -->
             <div
-              class="bg-white p-8 pt-24 rounded-xl shadow-lg hover:shadow-xl transition-shadow dark:bg-gray-800 relative overflow-hidden">
+              class="bg-white p-8 pt-24 rounded-xl shadow-lg hover:shadow-xl transition-shadow relative overflow-hidden dark:bg-gray-800 dark:shadow-accent-600">
               <div
-                class="bg-[#F0CA0B]/10 p-5 rounded-full w-28 h-28 flex items-center justify-center absolute -top-4 -right-4">
+                class="bg-accent/20 p-5 rounded-full w-28 h-28 flex items-center justify-center absolute -top-4 -right-4">
                 <iconify-icon class="text-[#F0CA0B]" icon="tdesign:template" width="46" height="46"></iconify-icon>
               </div>
               <h3 class="text-xl font-semibold text-gray-800 mb-4 dark:text-white">Template Design</h3>
@@ -170,74 +174,166 @@ import Footer from '@/components/Footer.vue';
         </div>
       </section>
 
-      <section id="portfolio" class="py-20 px-6 bg-gray-100">
+      <section id="portfolio" class="py-40 px-6 bg-primary-50 dark:bg-gray-800">
         <div class="container mx-auto">
-          <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">
-              Our <span class="text-[#F0CA0B]">Portfolio</span>
+          <div class="text-center mb-24">
+            <h2
+              class="text-3xl md:text-5xl font-extrabold block mb-3 bg-gradient-to-r from-primary-400 to-secondary-400 text-transparent bg-clip-text py-2 w-fit mx-auto">
+              Our Portfolio
             </h2>
-            <div class="w-20 h-1 bg-[#C00EF4] mx-auto"></div>
+            <div class="w-24 h-1.5 rounded-lg bg-gradient-to-r from-primary-400 to-secondary-400 mx-auto"></div>
           </div>
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-              <div class="bg-gray-200 h-48 flex items-center justify-center">
-                <span class="text-gray-400">Project 1</span>
+            <!-- Project 1 -->
+            <div
+              class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow dark:bg-gray-900">
+              <div
+                class="bg-gray-200 h-48 flex items-center justify-center border-b-2 border-gray-300 dark:border-primary-300">
+                <img src="@/assets/images/project-1.png" alt="Project 1" class="w-full h-full object-cover">
               </div>
-              <div class="p-6">
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">E-commerce Website</h3>
-                <p class="text-gray-600 mb-4">
-                  A full-featured online store with payment integration.
+              <div class="p-6 py-12">
+                <h3 class="text-xl md:text-2xl font-semibold text-gray-800 mb-2 dark:text-gray-100">
+                  Website Animmanga
+                </h3>
+                <p class="text-gray-600 mb-4 dark:text-gray-300">
+                  Website interaktif yang dirancang khusus untuk para pecinta anime dan manga.
                 </p>
-                <div class="flex flex-wrap gap-2">
-                  <span class="bg-[#5EC5E3]/10 text-[#5EC5E3] px-3 py-1 rounded-full text-xs font-medium">Web</span>
-                  <span class="bg-[#C00EF4]/10 text-[#C00EF4] px-3 py-1 rounded-full text-xs font-medium">UI/UX</span>
-                </div>
-              </div>
-            </div>
-            <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-              <div class="bg-gray-200 h-48 flex items-center justify-center">
-                <span class="text-gray-400">Project 2</span>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Mobile App</h3>
-                <p class="text-gray-600 mb-4">
-                  A cross-platform mobile application for health tracking.
-                </p>
-                <div class="flex flex-wrap gap-2">
-                  <span class="bg-[#F0CA0B]/10 text-[#F0CA0B] px-3 py-1 rounded-full text-xs font-medium">Mobile</span>
-                  <span class="bg-[#5EC5E3]/10 text-[#5EC5E3] px-3 py-1 rounded-full text-xs font-medium">React
-                    Native</span>
-                </div>
-              </div>
-            </div>
-            <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-              <div class="bg-gray-200 h-48 flex items-center justify-center">
-                <span class="text-gray-400">Project 3</span>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Corporate Website</h3>
-                <p class="text-gray-600 mb-4">A modern website for a financial services company.</p>
-                <div class="flex flex-wrap gap-2">
-                  <span class="bg-[#C00EF4]/10 text-[#C00EF4] px-3 py-1 rounded-full text-xs font-medium">Design</span>
+                <div class="flex flex-wrap gap-2.5">
                   <span
-                    class="bg-[#F0CA0B]/10 text-[#F0CA0B] px-3 py-1 rounded-full text-xs font-medium">Marketing</span>
+                    class="bg-primary-400/20 text-primary-400 px-3 py-1 rounded-full text-xs font-medium">Website</span>
+                  <span class="bg-[#FF0000]/20 text-[#FF0000] px-3 py-1 rounded-full text-xs font-medium dark:">Craft
+                    CMS</span>
+                  <span
+                    class="bg-secondary-400/20 text-secondary-500 px-3 py-1 rounded-full text-xs font-medium">PHP</span>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="text-center mt-12">
-            <a href="#"
-              class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#5EC5E3] hover:bg-[#4ab4d2] transition-colors">
-              View All Projects
-              <svg class="ml-3 -mr-1 h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd"
-                  d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </a>
+            <!-- Project 2 -->
+            <div
+              class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow dark:bg-gray-900">
+              <div
+                class="bg-gray-200 h-48 flex items-center justify-center border-b-2 border-gray-300 dark:border-primary-300">
+                <img src="@/assets/images/project-1.png" alt="Project 1" class="w-full h-full object-cover">
+              </div>
+              <div class="p-6 py-12">
+                <h3 class="text-xl md:text-2xl font-semibold text-gray-800 mb-2 dark:text-gray-100">
+                  Blog Mihwan
+                </h3>
+                <p class="text-gray-600 mb-4 dark:text-gray-300">
+                  Website pribadi yang menampilkan profil, karya, dan perjalanan profesional Mihwan.
+                </p>
+                <div class="flex flex-wrap gap-2.5">
+                  <span
+                    class="bg-primary-400/20 text-primary-400 px-3 py-1 rounded-full text-xs font-medium">Website</span>
+                  <span class="bg-[#FF0000]/20 text-[#FF0000] px-3 py-1 rounded-full text-xs font-medium dark:">Craft
+                    CMS</span>
+                  <span
+                    class="bg-secondary-400/20 text-secondary-500 px-3 py-1 rounded-full text-xs font-medium">PHP</span>
+                </div>
+              </div>
+            </div>
+            <!-- Project 3 -->
+            <div
+              class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow dark:bg-gray-900">
+              <div
+                class="bg-gray-200 h-48 flex items-center justify-center border-b-2 border-gray-300 dark:border-primary-300">
+                <img src="@/assets/images/project-1.png" alt="Project 1" class="w-full h-full object-cover">
+              </div>
+              <div class="p-6 py-12">
+                <h3 class="text-xl md:text-2xl font-semibold text-gray-800 mb-2 dark:text-gray-100">
+                  Website SuppaTools
+                </h3>
+                <p class="text-gray-600 mb-4 dark:text-gray-300">
+                  Website pribadi yang menampilkan profil, karya, dan perjalanan profesional Mihwan.
+                </p>
+                <div class="flex flex-wrap gap-2.5">
+                  <span
+                    class="bg-primary-400/20 text-primary-400 px-3 py-1 rounded-full text-xs font-medium">Website</span>
+                  <span class="bg-[#FF0000]/20 text-[#FF0000] px-3 py-1 rounded-full text-xs font-medium dark:">Craft
+                    CMS</span>
+                  <span
+                    class="bg-secondary-400/20 text-secondary-500 px-3 py-1 rounded-full text-xs font-medium">PHP</span>
+                </div>
+              </div>
+            </div>
+            <!-- Project 4 -->
+            <div
+              class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow dark:bg-gray-900">
+              <div
+                class="bg-gray-200 h-48 flex items-center justify-center border-b-2 border-gray-300 dark:border-primary-300">
+                <img src="@/assets/images/project-1.png" alt="Project 1" class="w-full h-full object-cover">
+              </div>
+              <div class="p-6 py-12">
+                <h3 class="text-xl md:text-2xl font-semibold text-gray-800 mb-2 dark:text-gray-100">
+                  Website Baca Al-Qur'an
+                </h3>
+                <p class="text-gray-600 mb-4 dark:text-gray-300">
+                  Website menampilkan kumpulan ayat Al-Qur'an dengan terjemahan, serta jadwal sholat.
+                </p>
+                <div class="flex flex-wrap gap-2.5">
+                  <span
+                    class="bg-primary-400/20 text-primary-400 px-3 py-1 rounded-full text-xs font-medium">Website</span>
+                  <span
+                    class="bg-accent-400/20 text-accent-400 px-3 py-1 rounded-full text-xs font-medium">JavaScript</span>
+                  <span
+                    class="bg-secondary-400/20 text-secondary-500 px-3 py-1 rounded-full text-xs font-medium">UI/UX</span>
+                </div>
+              </div>
+            </div>
+            <!-- Project 5 -->
+            <div
+              class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow dark:bg-gray-900">
+              <div
+                class="bg-gray-200 h-48 flex items-center justify-center border-b-2 border-gray-300 dark:border-primary-300">
+                <img src="@/assets/images/project-1.png" alt="Project 1" class="w-full h-full object-cover">
+              </div>
+              <div class="p-6 py-12">
+                <h3 class="text-xl md:text-2xl font-semibold text-gray-800 mb-2 dark:text-gray-100">Website Student
+                  Service Center (SSC)
+                </h3>
+                <p class="text-gray-600 mb-4 dark:text-gray-300">
+                  Website yang tiketing untuk mahasiswa yang ingin mengajukan layanan atau bantuan dari kampus Telkom
+                  University Surabaya.
+                </p>
+                <div class="flex flex-wrap gap-2.5">
+                  <span
+                    class="bg-primary-400/20 text-primary-400 px-3 py-1 rounded-full text-xs font-medium">Website</span>
+                  <span class="bg-green-400/20 text-green-500 px-3 py-1 rounded-full text-xs font-medium">VueJS</span>
+                  <span
+                    class="bg-secondary-400/20 text-secondary-500 px-3 py-1 rounded-full text-xs font-medium">UI/UX</span>
+                </div>
+              </div>
+            </div>
+            <!-- Project 6 -->
+            <div
+              class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow dark:bg-gray-900">
+              <div
+                class="bg-gray-200 h-48 flex items-center justify-center border-b-2 border-gray-300 dark:border-primary-300">
+                <img src="@/assets/images/project-1.png" alt="Project 1" class="w-full h-full object-cover">
+              </div>
+              <div class="p-6 py-12">
+                <h3 class="text-xl md:text-2xl font-semibold text-gray-800 mb-2 dark:text-gray-100">Website Prodi Bisnis
+                  Digital
+                </h3>
+                <p class="text-gray-600 mb-4 dark:text-gray-300">
+                  Website resmi prodi Bisnis Digital di Telkom University Surabaya. Menampilkan berupa informasi prodi
+                  dan berita prodi.
+                </p>
+                <div class="flex flex-wrap gap-2.5">
+                  <span
+                    class="bg-primary-400/20 text-primary-500 px-3 py-1 rounded-full text-xs font-medium">Website</span>
+                  <span
+                    class="bg-primary-400/20 text-primary-500 px-3 py-1 rounded-full text-xs font-medium dark:">Wordpress</span>
+                  <span
+                    class="bg-secondary-400/20 text-secondary-500 px-3 py-1 rounded-full text-xs font-medium">UI/UX</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
+
+
       <section id="pricing" class="py-20 px-6 bg-white">
         <div class="container mx-auto">
           <div class="text-center mb-16">
