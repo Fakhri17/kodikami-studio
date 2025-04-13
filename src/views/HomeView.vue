@@ -3,6 +3,25 @@ import ButtonVisit from '@/components/ButtonVisit.vue';
 import Footer from '@/components/Footer.vue';
 // import SimpleFooter from '@/components/SimpleFooter.vue';
 import Navbar from '@/components/Navbar.vue';
+import { useHead } from '@unhead/vue';
+
+useHead({
+  title: 'Kodikami Studio - Solusi Digital untuk Bisnis Anda',
+  meta: [
+    {
+      name: 'description',
+      content: 'Kodikami Studio adalah penyedia solusi digital yang inovatif untuk membantu bisnis Anda tumbuh dan berkembang di era modern.',
+    },
+    {
+      property: 'og:title',
+      content: 'Kodikami Studio - Solusi Digital untuk Bisnis Anda',
+    },
+    {
+      property: 'og:description',
+      content: 'Kodikami Studio adalah penyedia solusi digital yang inovatif untuk membantu bisnis Anda tumbuh dan berkembang di era modern.',
+    },
+  ],
+});
 </script>
 
 <template>
