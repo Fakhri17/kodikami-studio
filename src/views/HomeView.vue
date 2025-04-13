@@ -1,7 +1,9 @@
 <script setup>
-import Navbar from '@/components/Navbar.vue';
+import ButtonVisit from '@/components/ButtonVisit.vue';
 import Footer from '@/components/Footer.vue';
+import Navbar from '@/components/Navbar.vue';
 </script>
+
 <template>
   <div class="min-h-screen">
     <!-- Navbar -->
@@ -47,17 +49,17 @@ import Footer from '@/components/Footer.vue';
       <section id="about" class="py-40 px-6 bg-primary-50 dark:bg-gray-800">
         <div class="container mx-auto">
           <div class="flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
-              <div class="bg-white p-6 rounded-xl shadow-md">
-                <div class="bg-gray-200 w-full h-64 rounded-lg flex items-center justify-center mb-6">
-                  <span class="text-gray-400">Team Photo</span>
+            <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10 relative">
+              <div class="bg-gradient-to-r from-primary-400/20 to-secondary-400/20 p-3 rounded-full absolute left-0">
+                <div
+                  class="bg-gradient-to-r from-primary-400 to-secondary-400 w-8 h-8 rounded-full flex items-center justify-center">
+                  <iconify-icon class="text-white" icon="ri:team-fill" width="24" height="24"></iconify-icon>
                 </div>
-                <h3 class="text-xl font-semibold text-gr mb-2">Our Story</h3>
-                <p class="text-gray-600">
-                  Founded in 2020, we started as a small team with big dreams. Today, we've grown
-                  into a full-service digital agency.
-                </p>
               </div>
+              <div class="bg-white p-6 rounded-xl shadow-lg dark:shadow-primary-600">
+                <img src="@/assets/images/about.png" alt="">
+              </div>
+
             </div>
             <div class="md:w-1/2">
               <div class="mb-10">
@@ -176,6 +178,7 @@ import Footer from '@/components/Footer.vue';
 
       <section id="portfolio" class="py-40 px-6 bg-primary-50 dark:bg-gray-800">
         <div class="container mx-auto">
+
           <div class="text-center mb-24">
             <h2
               class="text-3xl md:text-5xl font-extrabold block mb-3 bg-gradient-to-r from-primary-400 to-secondary-400 text-transparent bg-clip-text py-2 w-fit mx-auto">
@@ -183,12 +186,13 @@ import Footer from '@/components/Footer.vue';
             </h2>
             <div class="w-24 h-1.5 rounded-lg bg-gradient-to-r from-primary-400 to-secondary-400 mx-auto"></div>
           </div>
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             <!-- Project 1 -->
             <div
               class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow dark:bg-gray-900">
               <div
-                class="bg-gray-200 h-48 flex items-center justify-center border-b-2 border-gray-300 dark:border-primary-300">
+                class="bg-gray-200 h-72 flex items-center justify-center border-b-2 border-gray-300 dark:border-primary-300">
                 <img src="@/assets/images/project-1.png" alt="Project 1" class="w-full h-full object-cover">
               </div>
               <div class="p-6 py-12">
@@ -206,14 +210,17 @@ import Footer from '@/components/Footer.vue';
                   <span
                     class="bg-secondary-400/20 text-secondary-500 px-3 py-1 rounded-full text-xs font-medium">PHP</span>
                 </div>
+
+                <ButtonVisit href="https://animmanga.moe/" />
+
               </div>
             </div>
             <!-- Project 2 -->
             <div
               class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow dark:bg-gray-900">
               <div
-                class="bg-gray-200 h-48 flex items-center justify-center border-b-2 border-gray-300 dark:border-primary-300">
-                <img src="@/assets/images/project-1.png" alt="Project 1" class="w-full h-full object-cover">
+                class="bg-gray-200 h-72 flex items-center justify-center border-b-2 border-gray-300 dark:border-primary-300">
+                <img src="@/assets/images/project-2.png" alt="Project 1" class="w-full h-full object-cover">
               </div>
               <div class="p-6 py-12">
                 <h3 class="text-xl md:text-2xl font-semibold text-gray-800 mb-2 dark:text-gray-100">
@@ -230,14 +237,15 @@ import Footer from '@/components/Footer.vue';
                   <span
                     class="bg-secondary-400/20 text-secondary-500 px-3 py-1 rounded-full text-xs font-medium">PHP</span>
                 </div>
+                <ButtonVisit href="https://mihwan.id/" />
               </div>
             </div>
             <!-- Project 3 -->
             <div
               class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow dark:bg-gray-900">
               <div
-                class="bg-gray-200 h-48 flex items-center justify-center border-b-2 border-gray-300 dark:border-primary-300">
-                <img src="@/assets/images/project-1.png" alt="Project 1" class="w-full h-full object-cover">
+                class="bg-gray-200 h-72 flex items-center justify-center border-b-2 border-gray-300 dark:border-primary-300">
+                <img src="@/assets/images/project-3.png" alt="Project 1" class="w-full h-full object-cover">
               </div>
               <div class="p-6 py-12">
                 <h3 class="text-xl md:text-2xl font-semibold text-gray-800 mb-2 dark:text-gray-100">
@@ -254,14 +262,15 @@ import Footer from '@/components/Footer.vue';
                   <span
                     class="bg-secondary-400/20 text-secondary-500 px-3 py-1 rounded-full text-xs font-medium">PHP</span>
                 </div>
+                <ButtonVisit href="https://suppatools.com/" />
               </div>
             </div>
             <!-- Project 4 -->
             <div
               class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow dark:bg-gray-900">
               <div
-                class="bg-gray-200 h-48 flex items-center justify-center border-b-2 border-gray-300 dark:border-primary-300">
-                <img src="@/assets/images/project-1.png" alt="Project 1" class="w-full h-full object-cover">
+                class="bg-gray-200 h-72 flex items-center justify-center border-b-2 border-gray-300 dark:border-primary-300">
+                <img src="@/assets/images/project-4.png" alt="Project 1" class="w-full h-full object-cover">
               </div>
               <div class="p-6 py-12">
                 <h3 class="text-xl md:text-2xl font-semibold text-gray-800 mb-2 dark:text-gray-100">
@@ -278,14 +287,15 @@ import Footer from '@/components/Footer.vue';
                   <span
                     class="bg-secondary-400/20 text-secondary-500 px-3 py-1 rounded-full text-xs font-medium">UI/UX</span>
                 </div>
+                <ButtonVisit href="http://islamic-web-telkomsby.netlify.app/" />
               </div>
             </div>
             <!-- Project 5 -->
             <div
               class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow dark:bg-gray-900">
               <div
-                class="bg-gray-200 h-48 flex items-center justify-center border-b-2 border-gray-300 dark:border-primary-300">
-                <img src="@/assets/images/project-1.png" alt="Project 1" class="w-full h-full object-cover">
+                class="bg-gray-200 h-72 flex items-center justify-center border-b-2 border-gray-300 dark:border-primary-300">
+                <img src="@/assets/images/project-5.png" alt="Project 1" class="w-full h-full object-cover">
               </div>
               <div class="p-6 py-12">
                 <h3 class="text-xl md:text-2xl font-semibold text-gray-800 mb-2 dark:text-gray-100">Website Student
@@ -302,14 +312,15 @@ import Footer from '@/components/Footer.vue';
                   <span
                     class="bg-secondary-400/20 text-secondary-500 px-3 py-1 rounded-full text-xs font-medium">UI/UX</span>
                 </div>
+                <ButtonVisit href="https://ssc-sby.id/" />
               </div>
             </div>
             <!-- Project 6 -->
             <div
               class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow dark:bg-gray-900">
               <div
-                class="bg-gray-200 h-48 flex items-center justify-center border-b-2 border-gray-300 dark:border-primary-300">
-                <img src="@/assets/images/project-1.png" alt="Project 1" class="w-full h-full object-cover">
+                class="bg-gray-200 h-72 flex items-center justify-center border-b-2 border-gray-300 dark:border-primary-300">
+                <img src="@/assets/images/project-6.png" alt="Project 1" class="w-full h-full object-cover">
               </div>
               <div class="p-6 py-12">
                 <h3 class="text-xl md:text-2xl font-semibold text-gray-800 mb-2 dark:text-gray-100">Website Prodi Bisnis
@@ -327,8 +338,10 @@ import Footer from '@/components/Footer.vue';
                   <span
                     class="bg-secondary-400/20 text-secondary-500 px-3 py-1 rounded-full text-xs font-medium">UI/UX</span>
                 </div>
+                <ButtonVisit href="https://bdb-sby.telkomuniversity.ac.id/" />
               </div>
             </div>
+
           </div>
         </div>
       </section>
