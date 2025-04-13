@@ -9,8 +9,16 @@ import Footer from '@/components/Footer.vue';
 
     <!-- Sections -->
     <main>
-      <section id="home" class="h-screen flex items-center px-6 bg-white dark:bg-gray-900 pt-32 md:pt-0">
-        <div class="container mx-auto flex flex-col md:flex-row items-center">
+      <section id="home" class="flex items-center px-6 dark:bg-gray-900 py-30 overflow-hidden relative">
+        <!-- Blurry circle elements -->
+        <div
+          class="absolute hidden md:block -right-40 -top-40 w-80 h-80 bg-primary-400 rounded-full opacity-30 dark:opacity-20">
+        </div>
+        <div
+          class="absolute hidden md:block -left-40 -bottom-40 w-80 h-80 bg-primary-400 rounded-full opacity-30 dark:opacity-20">
+        </div>
+
+        <div class="container mx-auto flex flex-col md:flex-row items-center relative z-10">
           <div class="md:w-1/2 mb-10 md:mb-0">
             <h1 class="text-5xl md:text-7xl font-extrabold mb-4 text-gray-800 dark:text-white">
               Creative <span class="text-primary">Solutions</span> for Your Business
@@ -32,21 +40,15 @@ import Footer from '@/components/Footer.vue';
         </div>
       </section>
 
-      <section id="about" class="py-20 px-6 bg-gray-100">
+      <section id="about" class="py-40 px-6 bg-primary-50 dark:bg-gray-800">
         <div class="container mx-auto">
-          <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">
-              About <span class="text-[#5EC5E3]">Us</span>
-            </h2>
-            <div class="w-20 h-1 bg-[#C00EF4] mx-auto"></div>
-          </div>
           <div class="flex flex-col md:flex-row items-center">
             <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
               <div class="bg-white p-6 rounded-xl shadow-md">
                 <div class="bg-gray-200 w-full h-64 rounded-lg flex items-center justify-center mb-6">
                   <span class="text-gray-400">Team Photo</span>
                 </div>
-                <h3 class="text-xl font-semibold text-gray-800 mb-2">Our Story</h3>
+                <h3 class="text-xl font-semibold text-gr mb-2">Our Story</h3>
                 <p class="text-gray-600">
                   Founded in 2020, we started as a small team with big dreams. Today, we've grown
                   into a full-service digital agency.
@@ -54,7 +56,18 @@ import Footer from '@/components/Footer.vue';
               </div>
             </div>
             <div class="md:w-1/2">
-              <div class="space-y-6">
+              <div class="mb-10">
+                <h2
+                  class="text-3xl md:text-5xl font-extrabold block mb-3 bg-gradient-to-r from-primary-400 to-secondary-400 text-transparent bg-clip-text py-2">
+                  About Us
+                </h2>
+                <p class="text-lg text-gray-600 mb-4 dark:text-gray-300">
+                  Kami berusaha untuk memberikan solusi digital yang inovatif dan efektif. Kami telah membantu banyak
+                  klien mencapai
+                  tujuan bisnis mereka.
+                </p>
+              </div>
+              <div class="space-y-8">
                 <div class="flex items-start">
                   <div class="bg-[#F0CA0B]/20 p-3 rounded-full mr-4">
                     <div class="bg-[#F0CA0B] w-8 h-8 rounded-full flex items-center justify-center">
@@ -63,10 +76,9 @@ import Footer from '@/components/Footer.vue';
                     </div>
                   </div>
                   <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Fast Delivery</h3>
-                    <p class="text-gray-600">
-                      We pride ourselves on delivering projects on time without compromising
-                      quality.
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2 dark:text-gray-50">Cepat & Tepat Waktu</h3>
+                    <p class="text-gray-600 dark:text-gray-300 font-medium">
+                      Mengutamakan kecepatan tanpa mengorbankan kualitas desain dan pengembangan.
                     </p>
                   </div>
                 </div>
@@ -77,10 +89,9 @@ import Footer from '@/components/Footer.vue';
                     </div>
                   </div>
                   <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Secure Solutions</h3>
-                    <p class="text-gray-600">
-                      Security is our top priority. All our solutions are built with the latest
-                      security standards.
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2 dark:text-gray-50">Solusi Aman</h3>
+                    <p class="text-gray-600 dark:text-gray-300 font-medium">
+                      Keamanan adalah prioritas utama kami. Semua solusi kami dibangun dengan standar keamanan terkini.
                     </p>
                   </div>
                 </div>
@@ -92,9 +103,10 @@ import Footer from '@/components/Footer.vue';
                     </div>
                   </div>
                   <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Cloud Ready</h3>
-                    <p class="text-gray-600">
-                      Our solutions are cloud-native and ready to scale with your business needs.
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2 dark:text-gray-50">Digital & Scalable</h3>
+                    <p class="text-gray-600 dark:text-gray-300 font-medium">
+                      Solusi kami dirancang untuk tumbuh bersama bisnis Anda. Kami menggunakan teknologi terbaru untuk
+                      memastikan skalabilitas.
                     </p>
                   </div>
                 </div>
@@ -104,56 +116,55 @@ import Footer from '@/components/Footer.vue';
         </div>
       </section>
 
-      <section id="services" class="py-20 px-6">
+      <section id="services" class="py-40 px-6 dark:bg-gray-900">
         <div class="container mx-auto">
           <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">
-              Our <span class="text-[#C00EF4]">Services</span>
+            <h2
+              class="text-3xl md:text-5xl font-extrabold block mb-3 bg-gradient-to-r from-primary-400 to-secondary-400 text-transparent bg-clip-text py-2">
+              Our Services
             </h2>
-            <div class="w-20 h-1 bg-[#5EC5E3] mx-auto"></div>
+            <p class="text-lg text-gray-600 mb-4 dark:text-gray-300">
+              Kami menawarkan berbagai layanan untuk memenuhi kebutuhan digital Anda.
+            </p>
           </div>
           <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow">
-              <div class="bg-[#5EC5E3]/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
-                <iconify-icon class="text-[#5EC5E3]" icon="tabler:code" width="32" height="32"></iconify-icon>
+            <!-- Card 1 - Web Development -->
+            <div
+              class="bg-white p-8 pt-24 rounded-xl shadow-lg hover:shadow-xl transition-shadow dark:bg-gray-800 relative overflow-hidden">
+              <div
+                class="bg-[#5EC5E3]/10 p-5 rounded-full w-28 h-28 flex items-center justify-center absolute -top-4 -right-4">
+                <iconify-icon class="text-[#5EC5E3]" icon="tabler:code" width="46" height="46"></iconify-icon>
               </div>
-              <h3 class="text-xl font-semibold text-gray-800 mb-4">Web Development</h3>
-              <p class="text-gray-600 mb-4">
-                Custom websites built with modern technologies to ensure performance and
-                scalability.
+              <h3 class="text-xl font-semibold text-gray-800 mb-4 dark:text-white">Web Development</h3>
+              <p class="text-gray-600 mb-4 dark:text-gray-300">
+                Bangun website profesional, cepat, dan responsif sesuai kebutuhan bisnismu.
               </p>
-              <a href="#" class="text-[#5EC5E3] font-medium flex items-center">
-                Learn more
-                <iconify-icon class="ml-2" icon="mingcute:arrow-right-fill" width="24" height="24"></iconify-icon>
-              </a>
             </div>
-            <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow">
-              <div class="bg-[#C00EF4]/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
-                <iconify-icon class="text-[#C00EF4]" icon="tabler:layout" width="32" height="32"></iconify-icon>
+
+            <!-- Card 2 - UI/UX Design -->
+            <div
+              class="bg-white p-8 pt-24 rounded-xl shadow-lg hover:shadow-xl transition-shadow dark:bg-gray-800 relative overflow-hidden">
+              <div
+                class="bg-[#C00EF4]/10 p-5 rounded-full w-28 h-28 flex items-center justify-center absolute -top-4 -right-4">
+                <iconify-icon class="text-[#C00EF4]" icon="tabler:layout" width="46" height="46"></iconify-icon>
               </div>
-              <h3 class="text-xl font-semibold text-gray-800 mb-4">UI/UX Design</h3>
-              <p class="text-gray-600 mb-4">
-                Beautiful and intuitive interfaces designed to enhance user experience and
-                engagement.
+              <h3 class="text-xl font-semibold text-gray-800 mb-4 dark:text-white">UI/UX Design</h3>
+              <p class="text-gray-600 mb-4 dark:text-gray-300">
+                Desain antarmuka yang menarik dan pengalaman pengguna yang intuitif untuk aplikasi bisnismu.
               </p>
-              <a href="#" class="text-[#C00EF4] font-medium flex items-center">
-                Learn more
-                <iconify-icon class="ml-2" icon="mingcute:arrow-right-fill" width="24" height="24"></iconify-icon>
-              </a>
             </div>
-            <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow">
-              <div class="bg-[#F0CA0B]/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
-                <iconify-icon class="text-[#F0CA0B]" icon="tdesign:template" width="32" height="32"></iconify-icon>
+
+            <!-- Card 3 - Template Design -->
+            <div
+              class="bg-white p-8 pt-24 rounded-xl shadow-lg hover:shadow-xl transition-shadow dark:bg-gray-800 relative overflow-hidden">
+              <div
+                class="bg-[#F0CA0B]/10 p-5 rounded-full w-28 h-28 flex items-center justify-center absolute -top-4 -right-4">
+                <iconify-icon class="text-[#F0CA0B]" icon="tdesign:template" width="46" height="46"></iconify-icon>
               </div>
-              <h3 class="text-xl font-semibold text-gray-800 mb-4">Template Design</h3>
-              <p class="text-gray-600 mb-4">
-                Pre-designed templates for various industries, customizable to fit your brand and
-                needs.
+              <h3 class="text-xl font-semibold text-gray-800 mb-4 dark:text-white">Template Design</h3>
+              <p class="text-gray-600 mb-4 dark:text-gray-300">
+                Desain template untuk website, aplikasi, dan media sosial yang menarik dan profesional.
               </p>
-              <a href="#" class="text-[#F0CA0B] font-medium flex items-center">
-                Learn more
-                <iconify-icon class="ml-2" icon="mingcute:arrow-right-fill" width="24" height="24"></iconify-icon>
-              </a>
             </div>
           </div>
         </div>
