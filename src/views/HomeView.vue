@@ -219,156 +219,249 @@ useHead({
             </p>
           </div>
 
-          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            <!-- Paket Starter -->
-            <div
-              class="bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow dark:shadow-primary-600">
-              <div class="p-6 text-center">
-                <h3 class="text-xl font-bold text-gray-800 mb-2">Paket Starter</h3>
-                <div class="text-2xl font-bold text-primary mb-4">
-                  Rp 250rb <span class="text-sm text-gray-500">- 1jt</span>
+          <!-- Website Development Pricing -->
+          <div class="mb-20">
+            <h3 class="text-2xl font-bold text-center mb-8 text-gray-800 dark:text-white">Website Development</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              <!-- Paket Starter -->
+              <div
+                class="bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow dark:shadow-primary-600">
+                <div class="p-6 text-center">
+                  <h3 class="text-xl font-bold text-gray-800 mb-2">Paket Starter</h3>
+                  <div class="text-2xl font-bold text-primary mb-4">
+                    Rp 250rb <span class="text-sm text-gray-500">- 1jt</span>
+                  </div>
+                  <p class="text-sm text-gray-600 mb-4 bg-primary/10 p-3 rounded-lg">
+                    Cocok untuk personal brand, portofolio, blog, atau landing page.
+                  </p>
+                  <a href="#contact"
+                    class="block w-full bg-primary hover:bg-[#4ab4d2] text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm">
+                    Pesan Sekarang
+                  </a>
                 </div>
-                <p class="text-sm text-gray-600 mb-4 bg-primary/10 p-3 rounded-lg">
-                  Cocok untuk personal brand, portofolio, blog, atau landing page.
-                </p>
-                <a href="#contact"
-                  class="block w-full bg-primary hover:bg-[#4ab4d2] text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm">
-                  Pesan Sekarang
-                </a>
+                <div class="border-t border-gray-200 p-6">
+                  <h4 class="font-semibold text-gray-700 mb-3 text-center">Termasuk:</h4>
+                  <ul class="space-y-3 text-sm">
+                    <li class="flex items-start">
+                      <iconify-icon class="text-primary mt-1 mr-2 flex-shrink-0" icon="entypo:check" width="20"
+                        height="20"></iconify-icon>
+                      <span class="text-gray-600">Landing page / blog dinamis</span>
+                    </li>
+                    <li class="flex items-start">
+                      <iconify-icon class="text-primary mt-1 mr-2 flex-shrink-0" icon="entypo:check" width="20"
+                        height="20"></iconify-icon>
+                      <span class="text-gray-600">Desain responsif & modern</span>
+                    </li>
+                    <li class="flex items-start">
+                      <iconify-icon class="text-primary mt-1 mr-2 flex-shrink-0" icon="entypo:check" width="20"
+                        height="20"></iconify-icon>
+                      <span class="text-gray-600">1 tahun hosting + domain (web.id / my.id)</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <div class="border-t border-gray-200 p-6">
-                <h4 class="font-semibold text-gray-700 mb-3 text-center">Termasuk:</h4>
-                <ul class="space-y-3 text-sm">
-                  <li class="flex items-start">
-                    <iconify-icon class="text-primary mt-1 mr-2 flex-shrink-0" icon="entypo:check" width="20"
-                      height="20"></iconify-icon>
-                    <span class="text-gray-600">Landing page / blog dinamis</span>
-                  </li>
-                  <li class="flex items-start">
-                    <iconify-icon class="text-primary mt-1 mr-2 flex-shrink-0" icon="entypo:check" width="20"
-                      height="20"></iconify-icon>
-                    <span class="text-gray-600">Desain responsif & modern</span>
-                  </li>
-                  <li class="flex items-start">
-                    <iconify-icon class="text-primary mt-1 mr-2 flex-shrink-0" icon="entypo:check" width="20"
-                      height="20"></iconify-icon>
-                    <span class="text-gray-600">1 tahun hosting + domain (web.id / my.id)</span>
-                  </li>
-                </ul>
+
+              <!-- Paket Growth -->
+              <div
+                class="relative bg-white border-3 border-secondary rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow dark:shadow-secondary-600">
+                <div class="absolute top-0 right-0 bg-secondary text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+                  POPULER
+                </div>
+                <div class="p-6 text-center">
+                  <h3 class="text-xl font-bold text-gray-800 mb-2">Paket Growth</h3>
+                  <div class="text-2xl font-bold text-secondary mb-4">
+                    Rp 1.5jt <span class="text-sm text-gray-500">- 4jt</span>
+                  </div>
+                  <p class="text-sm text-gray-600 mb-4 bg-secondary/10 p-3 rounded-lg">
+                    Cocok untuk UMKM, usaha kuliner, jasa lokal, atau profil bisnis.
+                  </p>
+                  <a href="#contact"
+                    class="block w-full bg-secondary hover:bg-[#a90bd3] text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm">
+                    Pesan Sekarang
+                  </a>
+                </div>
+                <div class="border-t border-gray-200 p-6">
+                  <h4 class="font-semibold text-gray-700 mb-3 text-center">Termasuk:</h4>
+                  <ul class="space-y-3 text-sm">
+                    <li class="flex items-start">
+                      <iconify-icon class="text-secondary mt-1 mr-2 flex-shrink-0" icon="entypo:check" width="20"
+                        height="20"></iconify-icon>
+                      <span class="text-gray-600">Website dinamis dengan fitur basic CRUD</span>
+                    </li>
+                    <li class="flex items-start">
+                      <iconify-icon class="text-secondary mt-1 mr-2 flex-shrink-0" icon="entypo:check" width="20"
+                        height="20"></iconify-icon>
+                      <span class="text-gray-600">Desain responsif & modern</span>
+                    </li>
+                    <li class="flex items-start">
+                      <iconify-icon class="text-secondary mt-1 mr-2 flex-shrink-0" icon="entypo:check" width="20"
+                        height="20"></iconify-icon>
+                      <span class="text-gray-600">1 tahun hosting + custom domain (.com / .id / lainnya)</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Paket Pro App -->
+              <div
+                class="bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow dark:shadow-accent-600">
+                <div class="p-6 text-center">
+                  <h3 class="text-xl font-bold text-gray-800 mb-2">Paket Pro App</h3>
+                  <div class="text-2xl font-bold text-accent mb-4">
+                    Rp 5jt <span class="text-sm text-gray-500">- 10jt</span>
+                  </div>
+                  <p class="text-sm text-gray-600 mb-4 bg-accent/10 p-3 rounded-lg">
+                    Cocok untuk kebutuhan bisnis lebih kompleks: dashboard, login, admin panel.
+                  </p>
+                  <a href="#contact"
+                    class="block w-full bg-accent hover:bg-[#d8b70a] text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm">
+                    Pesan Sekarang
+                  </a>
+                </div>
+                <div class="border-t border-gray-200 p-6">
+                  <h4 class="font-semibold text-gray-700 mb-3 text-center">Termasuk:</h4>
+                  <ul class="space-y-3 text-sm">
+                    <li class="flex items-start">
+                      <iconify-icon class="text-accent mt-1 mr-2 flex-shrink-0" icon="entypo:check" width="20"
+                        height="20"></iconify-icon>
+                      <span class="text-gray-600">Web App dengan fitur khusus</span>
+                    </li>
+                    <li class="flex items-start">
+                      <iconify-icon class="text-accent mt-1 mr-2 flex-shrink-0" icon="entypo:check" width="20"
+                        height="20"></iconify-icon>
+                      <span class="text-gray-600">Contoh: sistem booking, katalog produk</span>
+                    </li>
+                    <li class="flex items-start">
+                      <iconify-icon class="text-accent mt-1 mr-2 flex-shrink-0" icon="entypo:check" width="20"
+                        height="20"></iconify-icon>
+                      <span class="text-gray-600">Manajemen user</span>
+                    </li>
+                    <li class="flex items-start">
+                      <iconify-icon class="text-accent mt-1 mr-2 flex-shrink-0" icon="entypo:check" width="20"
+                        height="20"></iconify-icon>
+                      <span class="text-gray-600">Desain responsif & modern</span>
+                    </li>
+                    <li class="flex items-start">
+                      <iconify-icon class="text-accent mt-1 mr-2 flex-shrink-0" icon="entypo:check" width="20"
+                        height="20"></iconify-icon>
+                      <span class="text-gray-600">1 tahun hosting + custom domain</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Custom Solution -->
+              <div class="bg-gradient-to-br from-primary to-secondary rounded-xl shadow-lg overflow-hidden">
+                <div class="p-6 text-center text-white">
+                  <h3 class="text-xl font-bold mb-2">Custom</h3>
+                  <div class="text-2xl font-bold mb-4">Custom price</div>
+                  <p class="text-sm mb-4 bg-white/20 p-3 rounded-lg">
+                    Punya ide unik? Kami siap membantu mewujudkannya! Hubungi kami untuk penawaran
+                    khusus.
+                  </p>
+                </div>
+                <div class="border-t border-white/20 p-6">
+                  <h4 class="font-semibold text-white mb-3 text-center">Hubungi Kami:</h4>
+                  <ul class="space-y-3 text-sm text-white/90">
+                    <li class="flex items-center">
+                      <iconify-icon class="text-white mr-2 flex-shrink-0" icon="ic:baseline-email" width="24"
+                        height="24"></iconify-icon>
+                      <span>kodikami.studio@gmail.com</span>
+                    </li>
+                  </ul>
+                  <p class="text-sm text-white mt-4 text-center">
+                    Silakan hubungi tim kami untuk konsultasi & penawaran khusus.
+                  </p>
+                </div>
               </div>
             </div>
+          </div>
 
-            <!-- Paket Growth -->
-            <div
-              class="relative bg-white border-3 border-secondary rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow dark:shadow-secondary-600">
-              <div class="absolute top-0 right-0 bg-secondary text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
-                POPULER
-              </div>
-              <div class="p-6 text-center">
-                <h3 class="text-xl font-bold text-gray-800 mb-2">Paket Growth</h3>
-                <div class="text-2xl font-bold text-secondary mb-4">
-                  Rp 1.5jt <span class="text-sm text-gray-500">- 4jt</span>
+          <!-- Design Services Pricing -->
+          <div>
+            <h3 class="text-2xl font-bold text-center mb-8 text-gray-800 dark:text-white">Design Services</h3>
+            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto justify-center">
+              <!-- Template Design -->
+              <div
+                class="bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow dark:shadow-primary-600">
+                <div class="p-6 text-center">
+                  <h3 class="text-xl font-bold text-gray-800 mb-2">Template Design</h3>
+                  <p class="my-2">mulai dari</p>
+                  <div class="text-3xl font-bold text-primary mb-4">
+                    Rp 50rb <span class="text-sm text-gray-500"></span>
+                  </div>
+                  <p class="text-sm text-gray-600 mb-4 bg-primary/10 p-3 rounded-lg">
+                    Cocok untuk kebutuhan template website, aplikasi, atau media sosial.
+                  </p>
+                  <a href="#contact"
+                    class="block w-full bg-primary hover:bg-[#4ab4d2] text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm">
+                    Pesan Sekarang
+                  </a>
                 </div>
-                <p class="text-sm text-gray-600 mb-4 bg-secondary/10 p-3 rounded-lg">
-                  Cocok untuk UMKM, usaha kuliner, jasa lokal, atau profil bisnis.
-                </p>
-                <a href="#contact"
-                  class="block w-full bg-secondary hover:bg-[#a90bd3] text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm">
-                  Pesan Sekarang
-                </a>
-              </div>
-              <div class="border-t border-gray-200 p-6">
-                <h4 class="font-semibold text-gray-700 mb-3 text-center">Termasuk:</h4>
-                <ul class="space-y-3 text-sm">
-                  <li class="flex items-start">
-                    <iconify-icon class="text-secondary mt-1 mr-2 flex-shrink-0" icon="entypo:check" width="20"
-                      height="20"></iconify-icon>
-                    <span class="text-gray-600">Website dinamis dengan fitur basic CRUD</span>
-                  </li>
-                  <li class="flex items-start">
-                    <iconify-icon class="text-secondary mt-1 mr-2 flex-shrink-0" icon="entypo:check" width="20"
-                      height="20"></iconify-icon>
-                    <span class="text-gray-600">Desain responsif & modern</span>
-                  </li>
-                  <li class="flex items-start">
-                    <iconify-icon class="text-secondary mt-1 mr-2 flex-shrink-0" icon="entypo:check" width="20"
-                      height="20"></iconify-icon>
-                    <span class="text-gray-600">1 tahun hosting + custom domain (.com / .id / lainnya)</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Paket Pro App -->
-            <div
-              class="bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow dark:shadow-accent-600">
-              <div class="p-6 text-center">
-                <h3 class="text-xl font-bold text-gray-800 mb-2">Paket Pro App</h3>
-                <div class="text-2xl font-bold text-accent mb-4">
-                  Rp 5jt <span class="text-sm text-gray-500">- 10jt</span>
+                <div class="border-t border-gray-200 p-6">
+                  <h4 class="font-semibold text-gray-700 mb-3 text-center">Termasuk:</h4>
+                  <ul class="space-y-3 text-sm">
+                    <li class="flex items-start">
+                      <iconify-icon class="text-primary mt-1 mr-2 flex-shrink-0" icon="entypo:check" width="20"
+                        height="20"></iconify-icon>
+                      <span class="text-gray-600">Desain template modern & profesional</span>
+                    </li>
+                    <li class="flex items-start">
+                      <iconify-icon class="text-primary mt-1 mr-2 flex-shrink-0" icon="entypo:check" width="20"
+                        height="20"></iconify-icon>
+                      <span class="text-gray-600">File source (Figma/Adobe XD)</span>
+                    </li>
+                    <li class="flex items-start">
+                      <iconify-icon class="text-primary mt-1 mr-2 flex-shrink-0" icon="entypo:check" width="20"
+                        height="20"></iconify-icon>
+                      <span class="text-gray-600">Minimal revisi 2x</span>
+                    </li>
+                  </ul>
                 </div>
-                <p class="text-sm text-gray-600 mb-4 bg-accent/10 p-3 rounded-lg">
-                  Cocok untuk kebutuhan bisnis lebih kompleks: dashboard, login, admin panel.
-                </p>
-                <a href="#contact"
-                  class="block w-full bg-accent hover:bg-[#d8b70a] text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm">
-                  Pesan Sekarang
-                </a>
               </div>
-              <div class="border-t border-gray-200 p-6">
-                <h4 class="font-semibold text-gray-700 mb-3 text-center">Termasuk:</h4>
-                <ul class="space-y-3 text-sm">
-                  <li class="flex items-start">
-                    <iconify-icon class="text-accent mt-1 mr-2 flex-shrink-0" icon="entypo:check" width="20"
-                      height="20"></iconify-icon>
-                    <span class="text-gray-600">Web App dengan fitur khusus</span>
-                  </li>
-                  <li class="flex items-start">
-                    <iconify-icon class="text-accent mt-1 mr-2 flex-shrink-0" icon="entypo:check" width="20"
-                      height="20"></iconify-icon>
-                    <span class="text-gray-600">Contoh: sistem booking, katalog produk</span>
-                  </li>
-                  <li class="flex items-start">
-                    <iconify-icon class="text-accent mt-1 mr-2 flex-shrink-0" icon="entypo:check" width="20"
-                      height="20"></iconify-icon>
-                    <span class="text-gray-600">Manajemen user</span>
-                  </li>
-                  <li class="flex items-start">
-                    <iconify-icon class="text-accent mt-1 mr-2 flex-shrink-0" icon="entypo:check" width="20"
-                      height="20"></iconify-icon>
-                    <span class="text-gray-600">Desain responsif & modern</span>
-                  </li>
-                  <li class="flex items-start">
-                    <iconify-icon class="text-accent mt-1 mr-2 flex-shrink-0" icon="entypo:check" width="20"
-                      height="20"></iconify-icon>
-                    <span class="text-gray-600">1 tahun hosting + custom domain</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
 
-            <!-- Custom Solution -->
-            <div class="bg-gradient-to-br from-primary to-secondary rounded-xl shadow-lg overflow-hidden">
-              <div class="p-6 text-center text-white">
-                <h3 class="text-xl font-bold mb-2">Custom</h3>
-                <div class="text-2xl font-bold mb-4">Custom price</div>
-                <p class="text-sm mb-4 bg-white/20 p-3 rounded-lg">
-                  Punya ide unik? Kami siap membantu mewujudkannya! Hubungi kami untuk penawaran
-                  khusus.
-                </p>
-              </div>
-              <div class="border-t border-white/20 p-6">
-                <h4 class="font-semibold text-white mb-3 text-center">Hubungi Kami:</h4>
-                <ul class="space-y-3 text-sm text-white/90">
-                  <li class="flex items-center">
-                    <iconify-icon class="text-white mr-2 flex-shrink-0" icon="ic:baseline-email" width="24"
-                      height="24"></iconify-icon>
-                    <span>kodikami.studio@gmail.com</span>
-                  </li>
-                </ul>
-                <p class="text-sm text-white mt-4 text-center">
-                  Silakan hubungi tim kami untuk konsultasi & penawaran khusus.
-                </p>
+              <!-- UI/UX Design -->
+              <div
+                class="bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow dark:shadow-secondary-600">
+                <div class="p-6 text-center">
+                  <h3 class="text-xl font-bold text-gray-800 mb-2">UI/UX Design</h3>
+                  <p class="my-2">mulai dari</p>
+                  <div class="text-3xl font-bold text-secondary mb-4">
+                    Rp 100rb <span class="text-sm text-gray-500"></span>
+                  </div>
+                  <p class="text-sm text-gray-600 mb-4 bg-secondary/10 p-3 rounded-lg">
+                    Cocok untuk kebutuhan desain antarmuka aplikasi atau website.
+                  </p>
+                  <a href="#contact"
+                    class="block w-full bg-secondary hover:bg-[#a90bd3] text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm">
+                    Pesan Sekarang
+                  </a>
+                </div>
+                <div class="border-t border-gray-200 p-6">
+                  <h4 class="font-semibold text-gray-700 mb-3 text-center">Termasuk:</h4>
+                  <ul class="space-y-3 text-sm">
+                    <li class="flex items-start">
+                      <iconify-icon class="text-secondary mt-1 mr-2 flex-shrink-0" icon="entypo:check" width="20"
+                        height="20"></iconify-icon>
+                      <span class="text-gray-600">Desain UI/UX modern & intuitif</span>
+                    </li>
+                    <li class="flex items-start">
+                      <iconify-icon class="text-secondary mt-1 mr-2 flex-shrink-0" icon="entypo:check" width="20"
+                        height="20"></iconify-icon>
+                      <span class="text-gray-600">User flow & wireframe</span>
+                    </li>
+                    <li class="flex items-start">
+                      <iconify-icon class="text-secondary mt-1 mr-2 flex-shrink-0" icon="entypo:check" width="20"
+                        height="20"></iconify-icon>
+                      <span class="text-gray-600">File source (Figma/Adobe XD)</span>
+                    </li>
+                    <li class="flex items-start">
+                      <iconify-icon class="text-secondary mt-1 mr-2 flex-shrink-0" icon="entypo:check" width="20"
+                        height="20"></iconify-icon>
+                      <span class="text-gray-600">Minimal revisi 3x</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
